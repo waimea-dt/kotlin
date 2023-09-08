@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kotlin - Display Output</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="css/prism-one-dark.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header id="main-header">
+        <nav id="top-nav">
+            <a href="./">
+                <span class="material-symbols-outlined">home</span>
+                <h1>Kotlin</h1>
+            </a>
+        </nav>
+        <h2>Display Output</h2>
+        <p>A modern programming language for the JVM</p>
+    </header>
+
+    <main>
+
+        <h1>Displaying Text and Data to the Console</h1>
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+            <h2>The Console</h2>
+
+            <p>When you run a <strong>console program</strong>, output messages are shown as text in an area called the console. The console will show:</p>
+
+            <ul>
+                <li><strong>System messages</strong> (e.g. exit codes, 0 means 'success')</li>
+                <li><strong>Error messages</strong> (i.e. when your program crashes)</li>
+                <li><strong>Program output</strong> (text you intend to be seen)</li>
+            </ul>
+
+            <p>For example, a successful program...</p>
+
+            <pre><code class="language-console">
+$ java -classpath kotlin-stdlib.jar MainKt
+
+Hello World!
+
+$ Process finished with exit code 0
+            </code></pre>
+
+            <p>Or a program that throws an error...</p>
+
+            <pre><code class="language-console">
+$ java -classpath kotlin-stdlib.jar MainKt
+! Exception in thread "main" NumberFormatException
+! at MainKt.main(Main.kt:17)
+
+$ Process finished with exit code 1
+            </code></pre>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+            <h2>Output of Lines of Text</h2>
+
+            <p>Outputting text to the console, line-by-line is done via the println function:</p>
+
+            <dl class="code-list">
+                <dt><code class="language-kotlin">println(text)</code></dt>
+                <dd>Outputs the given text and moves the cursor down to the next line <span class="newline">⏎</span></dd>
+            </dl>
+
+            <p>So, this code...</p>
+
+            <pre><code class="language-kotlin">
+                println("Hello World")    // Goes down to next line
+                println("from Kotlin!")   // Goes down to next line
+                println()                 // Outputs a blank line
+                println("How lovely!")    // Goes down to next line
+            </code></pre>
+
+            <p>... would give this output</p>
+
+            <pre><code class="language-console">
+                Hello, World ⏎
+                from Kotlin! ⏎
+                ⏎
+                How lovely! ⏎
+                |
+            </code></pre>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+            <h2>Output of Text on Same Line</h2>
+
+            <p>Outputting text to the console so that it is all on the same line is done via the print() function:</p>
+
+            <dl class="code-list">
+                <dt><code class="language-kotlin">print(text)</code></dt>
+                <dd>Outputs the given text, leaving the cursor at the end of the text</dd>
+            </dl>
+
+            <p>So, this code...</p>
+
+            <pre><code class="language-kotlin">
+                print("This text ")   // Stays on same line
+                print("is all ")      // Stays on same line
+                print("on the ")      // Stays on same line
+                print("same line")    // Stays on same line
+            </code></pre>
+
+            <p>... would give this output</p>
+
+            <pre><code class="language-console">
+                This text is all on the same line|
+            </code></pre>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+
+            <h2>Output of Variables</h2>
+
+            <p>Variable values can be easily added into other text using String Templates. Variables are simply placed into the string preceded by a <strong>$ symbol</strong>:</p>
+
+            <pre><code class="language-kotlin">
+                val forename = "Jimmy"
+                val surname = "Smith"
+
+                println("Hello, $forename $surname!")
+            </code></pre>
+
+            <p>Would give this output:</p>
+
+            <pre><code class="language-console">
+                Hello, Jimmy Smith!
+            </code></pre>
+
+            <p>Function calls, etc. can also be placed inside a string, but must be wrapped in  <strong>{...} brackets</strong>:</p>
+
+            <pre><code class="language-kotlin">
+                println("Welcome, ${forename.get(0)}. $surname")
+            </code></pre>
+
+            <p>Would give this output:</p>
+
+            <pre><code class="language-console">
+                Welcome, J. Smith
+            </code></pre>
+
+       </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+
+    </main>
+
+    <script src="scripts/prism.js"></script>
+    <script src="scripts/console.js"></script>
+
+</body>
+
+</html>
+

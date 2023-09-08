@@ -6,6 +6,7 @@
 
     <title>Kotlin - Getting Started</title>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     <link rel="stylesheet" href="css/prism-one-dark.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -15,7 +16,7 @@
     <header id="main-header">
         <nav id="top-nav">
             <a href="./">
-                <img src="images/home.svg" alt="Home icon">
+                <span class="material-symbols-outlined">home</span>
                 <h1>Kotlin</h1>
             </a>
         </nav>
@@ -25,23 +26,21 @@
 
     <main>
 
-        <h1>Kotlin Getting Started</h1>
+        <h1>Getting Started with Kotlin</h1>
 
         <!-- -------------------------------------------------------------------------------------- -->
 
         <article>
             <h2>A Kotlin Project in IntelliJ IDEA</h2>
 
-            <div class="description">
-                <p>In IntelliJ IDEA, create a new project, and select <strong>Compose for Desktop</strong> as the generator.</p>
-
-                <p>Configure the project:</p>
+            <p>In IntelliJ IDEA, configure a new project with the following settings:</p>
 
                 <ul>
-                    <li><em>Name</em> - Pick a suitable name for your app / project</li>
+                    <li><em>Name</em> - Pick a suitable name for your project</li>
                     <li><em>Location</em> - The folder you use for your coding</li>
-                    <li><em>Group</em> - <strong>nz.school.waimea.</strong>yourusername</li>
-                    <li><em>JDK</em> - Version <strong>18</strong> seems to work best</li>
+                    <li><em>Language</em> - <strong>Kotlin</strong></li>
+                    <li><em>Build System</em> - <strong>IntelliJ</strong></li>
+                    <li><em>JDK</em> - Any recent version, e.g. <strong>18 or higher</strong></li>
                 </ul>
 
             </div>
@@ -56,15 +55,23 @@
         <article>
             <h2>Hello World!</h2>
 
-            <div class="description">
-                <p></p>
-            </div>
+            <p>This is a classic 'Hello World' program. Typically we write these to check that everything it setup and working correctly.</p>
+
+            <p>Replace any example code in your porject with this code:</p>
 
             <pre><code class="language-kotlin">
                 fun main() {
                     println("Hello, World!")
                 }
             </code></pre>
+
+            <p>Press the <strong>green 'play' arrow</strong> next to the main function to run the code. You should see `Hello World` appear in the output panel...</p>
+
+            <pre><code class="language-text">
+                Hello, World!
+            </code></pre>
+
+            <p>Note that the <strong>main()</strong> function ('fun' is short for function) is always the entry point for any Kotlin program.</p>
 
         </article>
 

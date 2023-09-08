@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kotlin - Variables</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="css/prism-one-dark.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header id="main-header">
+        <nav id="top-nav">
+            <a href="./">
+                <span class="material-symbols-outlined">home</span>
+                <h1>Kotlin</h1>
+            </a>
+        </nav>
+        <h2>Variables</h2>
+        <p>A modern programming language for the JVM</p>
+    </header>
+
+    <main>
+
+        <h1>Storing and Using Data in Variables</h1>
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+            <h2>Variable Types</h2>
+
+            <p>Kotlin variables can be used to store a range of different <strong>data types</strong>. There are many, but here are the most common:</p>
+
+            <ul>
+                <li><strong>Int</strong> - for integer (whole) numbers, e.g. 1234</li>
+                <li><strong>Double</strong> - for decimal numbers, e.g. 27.5</li>
+                <li><strong>String</strong> - for text, e.g. "Jimmy"</li>
+                <li><strong>Char</strong> - for single characters, e.g. 'A'</li>
+                <li><strong>Boolean</strong> - for true / false values</li>
+            </ul>
+
+            <p>Unlike Python, for example, Kotlin is <strong>strongly-typed</strong> which means that a variable, once created, can only store that one specific <strong>type</strong> of data. This can help prevent certain types of error.</p>
+
+            <p>More information and examples of different data types can be found <a target="_blank" href="https://kotlinlang.org/docs/basic-types.html">here</a>.</p>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+            <h2>Declaring Variables</h2>
+
+            <p><strong>'Declaring'</strong> a variable is what you do when you first create and name it.</p>
+
+            <p>When declaring a variable, if you don't provide a data value, you must <strong>specify the data type</strong>:</p>
+
+            <pre><code class="language-kotlin">
+                // Declaring some variables with types
+                val name: String
+                val age: Int
+                val height: Double
+                val expert: Boolean
+            </code></pre>
+
+            <p>If you do provide an initial data value then the <strong>data type is inferred</strong> (worked out) from the data:</p>
+
+            <pre><code class="language-kotlin">
+                // Declaring some variables, inferring types
+                val name = "Jimmy"   // name is now a String
+                val age = 21         // age is now an Int
+                val height = 1.85    // height is now a Double
+                val expert = true    // expert is now a Boolean
+            </code></pre>
+
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+            <h2>Read-Only Variables (Values)</h2>
+
+            <p>If you create a variable using the <code class="language-kotlin">val</code> keyword, its value can be set once, but then <strong>never changed</strong> (it is 'immutable').</p>
+
+            <pre><code class="language-kotlin">
+                val name = "Jimmy"
+                val age = 21
+
+                name = "James"  // Error as values can't change
+                age = 30        // Error as values can't change
+            </code></pre>
+
+            <p>Use <code class="language-kotlin">val</code> whenever possible, unless you know the value might need to change, then use <code class="language-kotlin">var</code> (see next section).</p>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+            <h2>Modifiable Variables</h2>
+
+            <p>If you create a variable using the <code class="language-kotlin">var</code> keyword, its value <strong>can be modified</strong> whenever needed (it is 'mutable').</p>
+
+            <pre><code class="language-kotlin">
+                var name = "Jimmy"
+                var age = 21
+
+                name = "James"  // Variable value will change
+                age = 22        // Variable value will change
+            </code></pre>
+
+            <p>Only use <code class="language-kotlin">var</code> if you know that the value might change. Otherwise, use <code class="language-kotlin">val</code> (see previous section).</p>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+            <h2>Naming Variables</h2>
+
+            <p>.</p>
+
+            <pre><code class="language-kotlin">
+                // Some good variable names
+                val name = "Jimmy"
+                val name1 = "Jimmy"
+
+                // Good variable names with multiple words
+                val firstName = "Jimmy"  // Camelcase
+                val first_name = "Jimmy" // Snakecase
+
+                // Some bad variable names
+                val n = "Jimmy"          // Not descriptive
+                val Name = "Jimmy"       // No capital at start
+                val 1name = "Jimmy"      // Only letters at start
+                val firstname = "Jimmy"  // Hard to read
+            </code></pre>
+
+            <p></p>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+            <h2>Using Variables</h2>
+
+            <p>.</p>
+
+            <pre><code class="language-kotlin">
+                val num1 = 10
+                val num2 = 15
+                var sum: Int
+
+                // Calculate the sum of the two numbers
+                sum = num1 + num2
+            </code></pre>
+
+            <p>.</p>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+            <h2>Using Variables</h2>
+
+            <p>.</p>
+
+            <pre><code class="language-kotlin">
+                val num1 = 10
+                val num2 = 15
+                var sum: Int
+
+                // Calculate the sum of the two numbers
+                sum = num1 + num2
+            </code></pre>
+
+            <p>.</p>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+
+    </main>
+
+    <script src="scripts/prism.js"></script>
+
+</body>
+
+</html>
+

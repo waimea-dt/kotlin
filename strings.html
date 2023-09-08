@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kotlin - Working with Strings</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="css/prism-one-dark.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header id="main-header">
+        <nav id="top-nav">
+            <a href="./">
+                <span class="material-symbols-outlined">home</span>
+                <h1>Kotlin</h1>
+            </a>
+        </nav>
+        <h2>Working with Strings</h2>
+        <p>A modern programming language for the JVM</p>
+    </header>
+
+    <main>
+
+        <h1>Manuipulating and Operating on Strings</h1>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+
+            <h2>Working with the String Class</h2>
+
+            <p>Strings are collections of characters. A single string can contain zero, one or more characters, strung together.</p>
+
+            <img src="images/string.svg" alt="Strings and characters">
+
+            <p>You can find information about Strings <a target="_blank" href="https://kotlinlang.org/docs/strings.html">here</a>.</p>
+
+            <p>Kotlin has a rich String class that provides the means to manipulate, analyse and work with strings of characters. The full list of String class functions is <a target="_blank" href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/">here</a>.</p>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+
+            <h2>Defining Strings</h2>
+
+            <p>Strings are defined using <strong>"..." quotes</strong>:</p>
+
+            <pre><code class="language-kotlin">
+                val forename = "Jimmy"
+                val surname = "Smith"
+                val greeting = "Why, hello there!"
+            </code></pre>
+
+            <p>If you need strings that contain multiple lines of text, you can use <strong>"'" triple quotes</strong> at the start and end:</p>
+
+            <pre><code class="language-kotlin">
+                val message =
+                """Hello to all of you!
+                Welcome to the new term.
+                Enjoy your time here."""
+            </code></pre>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+
+            <h2>Concatenation (Joining) Strings</h2>
+
+            <p>To join different strings or string variables, use the concatenation operator:</p>
+
+            <dl class="code-list">
+                <dt><code class="language-kotlin">+</code></dt>
+                <dd>Concatenation ('joining' text together)</dd>
+            </dl>
+
+
+            <pre><code class="language-kotlin">
+                val forename = "Jimmy"
+                val surname = "Smith"
+
+                val fullName = "Mr " + forename + " " + surname
+
+                println("Hello, " + fullName)
+            </code></pre>
+
+            <p>Note that often it is clearer and easier to use <strong>String Templates</strong> when displaying several variables together (see next section). However, sometimes concatenation is better (e.g. if joining many items over several lines of code).</p>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+
+            <h2>String Templates</h2>
+
+            <p>Variable values can be easily added into other text using String Templates. Variables are simply placed into the string preceded by a <strong>$ symbol</strong>:</p>
+
+            <pre><code class="language-kotlin">
+                val forename = "Jimmy"
+                val surname = "Smith"
+
+                val fullName = "Mr $forename $surname"
+
+                println("Hello, $fullName!")  // Hello, Jimmy Smith!
+            </code></pre>
+
+            <p>Function calls, etc. can also be placed inside a string, but must be wrapped in  <strong>{...} brackets</strong>:</p>
+
+            <pre><code class="language-kotlin">
+                val fullName = "Mr ${forename.get(0)} $surname"
+
+                println("Hello, $fullName!")  // Hello, J Smith!
+            </code></pre>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+
+            <h2>Excaped Characters</h2>
+
+            <p>Some characters are not possible to type (e.g. a newline), or have special meaning in strings (e.g. the $ symbol for String Templates). In these cases we use <strong>excaped characters</strong> using the <strong>\</strong> character:</p>
+
+            <dl class="code-list">
+                <dt><code class="language-kotlin">\n</code></dt>
+                <dd>Inserts a newline character</dd>
+
+                <dt><code class="language-kotlin">\$</code></dt>
+                <dd>Inserts the $ symbol (instead of a variable)</dd>
+
+                <dt><code class="language-kotlin">\"</code></dt>
+                <dd>Shows a " symbol (instead of ending the string)</dd>
+
+                <dt><code class="language-kotlin">\\</code></dt>
+                <dd>Shows a \ symbol (instead of escaping next char)</dd>
+            </dl>
+
+            <pre><code class="language-kotlin">
+                "I shouted \"Hello!\" to her"  // Shows speech marks
+                "Line One\nLine Two"           // Adds newlines
+                "It costs \$200 to buy"        // Showss the $ symbol
+            </code></pre>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+
+            <h2>Altering Strings</h2>
+
+            <p>The String class has built-in functions to manipulate a string. Here are some useful ones:</p>
+
+            <dl class="code-list">
+                <dt><code class="language-kotlin">.toUpperCase()</code></dt>
+                <dd>Returns an all uppercase version</dd>
+
+                <dt><code class="language-kotlin">.toLowerCase()</code></dt>
+                <dd>Returns an all lowercase version</dd>
+
+                <dt><code class="language-kotlin">.reversed()</code></dt>
+                <dd>Returns a reversed version</dd>
+            </dl>
+
+            <p><em>Note that none of these functions modify the original string, they just return a new string with the required content.</em></p>
+
+            <pre><code class="language-kotlin">
+                val name= = "Jimmy Smith"
+
+                name.toUpperCase()    // "JIMMY SMITH"
+                name.toLowerCase()    // "jimmy smith"
+
+                name.reversed()       // "htimS ymmiJ"
+            </code></pre>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+
+            <h2>String Properties and Information</h2>
+
+            <p>The String class has built-in properties and functions that give information about the string contents. Here are some useful ones:</p>
+
+            <dl class="code-list">
+                <dt><code class="language-kotlin">.length</code></dt>
+                <dd>Returns length of the string, including spaces</dd>
+
+                <dt><code class="language-kotlin">.isEmpty()</code></dt>
+                <dd>Returns true if contains nothing</dd>
+
+                <dt><code class="language-kotlin">.isNotEmpty()</code></dt>
+                <dd>Returns true if contains any characters</dd>
+
+                <dt><code class="language-kotlin">.isNotBlank()</code></dt>
+                <dd>Returns true if contains text/symbols</dd>
+
+                <dt><code class="language-kotlin">.contains(text)</code></dt>
+                <dd>Returns true if given text is found</dd>
+
+                <dt><code class="language-kotlin">.startsWith(text)</code></dt>
+                <dd>Returns true if starts with given text</dd>
+
+                <dt><code class="language-kotlin">.endsWith(text)</code></dt>
+                <dd>Returns true if ends with given text</dd>
+
+                <dt><code class="language-kotlin">.indexOf(char)</code></dt>
+                <dd>Returns the index of first matching character</dd>
+
+                <dt><code class="language-kotlin">.count(match)</code></dt>
+                <dd>Returns number of times the match occurs</dd>
+            </dl>
+
+            <pre><code class="language-kotlin">
+                val name= = "Jimmy Smith"
+
+                name.length              // 11
+
+                name.isEmpty()           // false
+                name.isNotEmpty()        // true
+                name.isNotBlank()        // true
+
+                name.contains("S")       // true
+                name.contains("s")       // false
+                name.contains("Smith")   // true
+
+                name.startsWith("Jim")   // true
+                name.startsWith("y")     // false
+
+                name.endsWith("Jim")     // false
+                name.endsWith("y")       // true
+
+                name.indexOf('S')        // 6
+                name.indexOf('X')        // -1 (no match)
+
+                name.count{ it == 'm' }  // 3
+            </code></pre>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+
+            <h2>Extracting Text from Strings</h2>
+
+            <p>The String class has built-in functions to get individual characters or chunks of text from within a string. Here are some useful ones:</p>
+
+            <dl class="code-list">
+                <dt><code class="language-kotlin">.firstOrNull()</code></dt>
+                <dd>Returns first character, null if none</dd>
+
+                <dt><code class="language-kotlin">.lastOrNull()</code></dt>
+                <dd>Returns last character, null if none</dd>
+
+                <dt><code class="language-kotlin">.get(n)</code></dt>
+                <dd>Returns character at index n (index starts at 0 for first character)</dd>
+
+                <dt><code class="language-kotlin">.take(n)</code></dt>
+                <dd>Returns the first n characters</dd>
+
+                <dt><code class="language-kotlin">.takeLast(n)</code></dt>
+                <dd>Returns the last n characters</dd>
+
+                <dt><code class="language-kotlin">.drop(n)</code></dt>
+                <dd>Removes the first n characters and returns rest</dd>
+
+                <dt><code class="language-kotlin">.dropLast(n)</code></dt>
+                <dd>Removes the last n characters and returns rest</dd>
+
+                <dt><code class="language-kotlin">.substring(r)</code></dt>
+                <dd>Returns part of the string based on the given index or range (see examples)</dd>
+            </dl>
+
+            <p><em>Note that none of these functions modify the original string, they just return a new string with the required content.</em></p>
+
+            <pre><code class="language-kotlin">
+                val name= = "Jimmy Smith"
+
+                name.firstOrNull()    // 'J'
+                name.lastOrNull()     // 'h'
+
+                name.get(4)           // 'y'
+
+                name.take(3)          // "Jim"
+                name.takeLast(3)      // "ith"
+
+                name.drop(3)          // "my Smith"
+                name.dropLast(3)      // "Jimmy Sm"
+
+                name.substring(0, 3)  // "Jim"     (3 not included)
+                name.substring(0..3)  // "Jimm"    (3 included)
+                name.substring(6..8)  // "Smi"     (8 included)
+                name.substring(6)     // "y Smith" (6 to end)
+                name.substring(-4)    // "mith"    (from end, back 4)
+
+            </code></pre>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+        <article>
+
+            <h2>Breaking Apart Strings</h2>
+
+            <p>The String class has several built-in functions to seperate out words or individual characters from a string. Here are some useful ones:</p>
+
+            <dl class="code-list">
+                <dt><code class="language-kotlin">.toCharArray()</code></dt>
+                <dd>Returns a collection of all of the characters from the string</dd>
+
+                <dt><code class="language-kotlin">.split(char)</code></dt>
+                <dd>Splits the string each time the given character is found and returns a collection of the parts</dd>
+
+            </dl>
+
+            <p><em>Note that none of these functions modify the original string, they just return a new collection of characters or strings.</em></p>
+
+            <pre><code class="language-kotlin">
+                val name= = "Jimmy Smith"
+
+                name.toCharArray()   // ['J','i','m','m','y'...]
+                name.split(' ')      // ["Jimmy", "Smith"]
+            </code></pre>
+
+        </article>
+
+
+        <!-- -------------------------------------------------------------------------------------- -->
+
+
+    </main>
+
+    <script src="scripts/prism.js"></script>
+
+</body>
+
+</html>
+

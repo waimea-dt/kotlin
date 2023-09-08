@@ -6,6 +6,7 @@
 
     <title>Kotlin</title>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     <link rel="stylesheet" href="css/prism-one-dark.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -15,7 +16,7 @@
     <header id="main-header">
         <nav id="top-nav">
             <a href="./">
-                <img src="images/home.svg" alt="Home icon">
+                <span class="material-symbols-outlined">home</span>
                 <h1>Kotlin</h1>
             </a>
         </nav>
@@ -31,45 +32,9 @@
 
             <p><a target="_blank" href="https://kotlinlang.org/">Kotlin</a> is a cross-platform, statically typed, general-purpose high-level programming language with type inference.</p>
 
-            <p>Kotlin provides a modern alternative to Java, interoperating fully with Java and the Java Virtual Machine (JVM).</p>
+            <p>Kotlin provides a modern alternative to Java, interoperating fully with Java and the Java Virtual Machine (JVM). It is the recommended choice for <a target="_blank" href="https://developer.android.com/kotlin">Android app development</a>. Kotlin code is more concise and readable than the equivalent Java code, and is a pleasure to program in.</p>
 
-        </article>
-
-        <!-- ----------------------------------------------------------------------------------- -->
-
-        <article>
-            <h2>Guides</h2>
-
-            <nav id="main-nav">
-                <dl>
-                    <dt><a href="intro.html">Getting Started</a></dt>
-                    <dd>Writing your first Kotlin program</dd>
-                </dl>
-            </nav>
-
-        </article>
-
-        <!-- ----------------------------------------------------------------------------------- -->
-
-        <article>
-            <h2>A Simple Example</h2>
-
-            <pre><code class="language-kotlin">
-                fun main() {
-                    print("What is your name? ")
-                    val name = readln()
-                    println("Hello, $name!")
-                }
-            </code></pre>
-
-            <p>Kotlin code is far more concise and readable than the equivalent Java code. Kotlin also features much stronger type-safety and modern programming language idoms and features.</p>
-
-        </article>
-
-        <!-- ----------------------------------------------------------------------------------- -->
-
-        <article>
-            <h2>Useful Links</h2>
+            <h3>Useful Links</h3>
 
             <ul>
                 <li><a target="_blank" href="https://kotlinlang.org/docs/basic-syntax.html">Kotlin Badic Syntax</a> - How to write Kotlin</li>
@@ -93,9 +58,170 @@
 
         </article>
 
+        <!-- ----------------------------------------------------------------------------------- -->
+
+        <article>
+            <h2>Guides</h2>
+
+            <nav id="main-nav">
+                <dl>
+                    <dt><a href="intro.html">
+                        <span class="material-symbols-outlined">rocket_launch</span>
+                        Getting Started
+                    </a></dt>
+                    <dd>Setting up your IDE and writing your first Kotlin program</dd>
+
+                    <dt><a href="variables.html">
+                        <span class="material-symbols-outlined">pin</span>
+                        Data Types &amp; Variables
+                    </a></dt>
+                    <dd>Storing and using diffent types of data in variables (var, val, Int, etc.)</dd>
+
+                    <dt><a href="output.html">
+                        <span class="material-symbols-outlined">desktop_windows</span>
+                        Displaying Output Text
+                    </a></dt>
+                    <dd>Displaying text and data in the console for the user to see</dd>
+
+                    <dt><a href="input.html">
+                        <span class="material-symbols-outlined">keyboard</span>
+                        Getting User Input
+                    </a></dt>
+                    <dd>Getting input data from the user via the console</dd>
+
+                    <dt><a href="strings.html">
+                        <span class="material-symbols-outlined">glyphs</span>
+                        Working with Strings
+                    </a></dt>
+                    <dd>Manipulating and operating on strings of characters</dd>
+
+                    <dt><a href="operators.html">
+                        <span class="material-symbols-outlined">calculate</span>
+                        Maths &amp; Logic Operators
+                    </a></dt>
+                    <dd>Performing mathematical and logical operations on data (+, -, &&, ||, etc.)</dd>
+
+                    <dt><a href="branching.html">
+                        <span class="material-symbols-outlined">alt_route</span>
+                        Branching / Decisions
+                    </a></dt>
+                    <dd>Making choices and taking different code pathways (if, when, etc.)</dd>
+
+                    <dt><a href="iteration.html">
+                        <span class="material-symbols-outlined">replay</span>
+                        Iteration / Looping
+                    </a></dt>
+                    <dd>Repeating blocks of code (while, for, forEach, etc.)</dd>
+
+                    <dt><a href="collections.html">
+                        <span class="material-symbols-outlined">table_rows_narrow</span>
+                        Data Collections
+                    </a></dt>
+                    <dd>Storing and manipulating collections of data (List, Map, etc.)</dd>
+
+                    <dt><a href="functions.html">
+                        <span class="material-symbols-outlined">schema</span>
+                        Functions
+                    </a></dt>
+                    <dd>Creating and calling functions with parameters and return values</dd>
+
+                    <dt><a href="classes.html">
+                        <span class="material-symbols-outlined">architecture</span>
+                        OOP Classes &amp; Objects
+                    </a></dt>
+                    <dd>OOP: Defining classes and instantiating objects from them</dd>
+                </dl>
+            </nav>
+
+        </article>
+
+        <!-- ----------------------------------------------------------------------------------- -->
+
+        <article>
+            <h2>An Example Kotlin Program</h2>
+
+            <pre><code class="language-kotlin">
+                fun main() {
+                    while (true) {
+                        print("Name: ")
+                        val name = readln()
+                        // Quit if no name
+                        if (name.isBlank()) break
+
+                        print("Mark: ")
+                        val mark = readln().toIntOrNull()
+
+                        print("Feedback: ")
+                        val feedback = readln()
+
+                        // Work out the grade
+                        val grade = when (mark) {
+                            in 0..24   -> "Not Achieved"
+                            in 25..49  -> "Achieved"
+                            in 50..74  -> "Merit"
+                            in 75..100 -> "Excellence"
+                            else -> "unknown"
+                        }
+
+                        println()
+                        println(name)
+                        println("-".repeat(name.length))
+                        println(grade)
+
+                        // Show feedback as a list if given
+                        if (feedback.isNotBlank()) {
+                            feedback.split(", ").forEach {
+                                println(" - $it")
+                            }
+                        }
+                        println()
+                    }
+                }
+            </code></pre>
+
+        </article>
+
+        <!-- ----------------------------------------------------------------------------------- -->
+
+        <article>
+            <h2>Program Output</h2>
+
+            <p>This concise program gets input from the user (until they just press Enter to quit), processes the data, and then displays it in a nicely formated way. Here is an example run:</p>
+
+            <pre><code class="language-console">
+                $ java -classpath kotlin-stdlib.jar MainKt
+
+                Name: Jimmy Smith
+                Mark: 78
+                Feedback: superb effort, clear and concise
+
+                Jimmy Smith
+                -----------
+                Excellence
+                 - superb effort
+                 - clear and concise
+
+                Name: Dave Gnome
+                Mark: 13
+                Feedback: rushed, incomplete, little effort
+
+                Dave Gnome
+                ----------
+                Not Achieved
+                 - rushed
+                 - incomplete
+                 - little effort
+
+                Name: ⏎
+
+                $ Process finished with exit code 0
+            </code></pre>
+        </article>
+
     </main>
 
     <script src="scripts/prism.js"></script>
+    <script src="scripts/console.js"></script>
 
 </body>
 
