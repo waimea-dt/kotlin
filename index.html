@@ -6,134 +6,27 @@
 
     <title>Kotlin</title>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
-    <link rel="stylesheet" href="css/prism-one-dark.css">
+    <link rel="icon" href="images/kotlin-icon.png" type="image/png">
+    <link rel="icon" href="images/kotlin-icon.svg" type="image/svg+xml">
+
     <link rel="stylesheet" href="css/styles.css">
+
+    <script src="scripts/loader.js"></script>
 </head>
 
 <body>
 
-    <header id="main-header">
-        <nav id="top-nav">
-            <a href="./">
-                <span class="material-symbols-outlined">home</span>
-                <h1>Kotlin</h1>
-            </a>
-        </nav>
-        <p>A modern programming language for the JVM</p>
-    </header>
+    <include src="includes/header.html" data-sub-title=""></include>
 
     <main id="home">
 
         <!-- ----------------------------------------------------------------------------------- -->
 
-        <article>
-            <img class="logo" src="images/kotlin-logo.svg" alt="Kotlin logo">
-
-            <p><a target="_blank" href="https://kotlinlang.org/">Kotlin</a> is a cross-platform, statically typed, general-purpose high-level programming language with type inference.</p>
-
-            <p>Kotlin provides a modern alternative to Java, interoperating fully with Java and the Java Virtual Machine (JVM). It is the recommended choice for <a target="_blank" href="https://developer.android.com/kotlin">Android app development</a>. Kotlin code is more concise and readable than the equivalent Java code, and is a pleasure to program in.</p>
-
-            <h3>Useful Links</h3>
-
-            <ul>
-                <li><a target="_blank" href="https://kotlinlang.org/docs/basic-syntax.html">Kotlin Badic Syntax</a> - How to write Kotlin</li>
-
-                <li><a target="_blank" href="https://kotlinlang.org/docs/basic-types.html">Basic Data Types in Kotlin</a> - Numbers, text, etc.</li>
-
-                <li><a target="_blank" href="https://kotlinlang.org/docs/control-flow.html">Control Flow in Kotlin</a> - Conditionals, loops, etc.</li>
-
-                <li><a target="_blank" href="https://kotlinlang.org/docs/functions.html">Functions in Kotlin</a> - Creating and calling functions</li>
-
-                <li><a target="_blank" href="https://kotlinlang.org/docs/classes.html">Classes and Objects in Kotlin</a> - OOP concepts</li>
-
-                <li><a target="_blank" href="https://kotlinlang.org/docs/collections-overview.html">Kotlin Collections</a> - Data lists, maps, etc.</li>
-
-                <li><a target="_blank" href="https://play.kotlinlang.org/byExample/overview">Learn Kotlin by Example</a> - See runnable examples</li>
-
-                <li><a target="_blank" href="https://kotlinlang.org/docs/idioms.html">Kotlin Idioms</a> - The Kotlin way of doing things</li>
-
-                <li><a target="_blank" href="https://play.kotlinlang.org/">Kotlin Playground</a> - Run code in the browser</li>
-            </ul>
-
-        </article>
+        <include src="includes/intro.html"></include>
 
         <!-- ----------------------------------------------------------------------------------- -->
 
-        <article>
-            <h2>Guides</h2>
-
-            <nav id="main-nav">
-                <dl>
-                    <dt><a href="intro.html">
-                        <span class="material-symbols-outlined">rocket_launch</span>
-                        Getting Started
-                    </a></dt>
-                    <dd>Setting up your IDE and writing your first Kotlin program</dd>
-
-                    <dt><a href="variables.html">
-                        <span class="material-symbols-outlined">pin</span>
-                        Data Types &amp; Variables
-                    </a></dt>
-                    <dd>Storing and using diffent types of data in variables (var, val, Int, etc.)</dd>
-
-                    <dt><a href="output.html">
-                        <span class="material-symbols-outlined">desktop_windows</span>
-                        Displaying Output Text
-                    </a></dt>
-                    <dd>Displaying text and data in the console for the user to see</dd>
-
-                    <dt><a href="input.html">
-                        <span class="material-symbols-outlined">keyboard</span>
-                        Getting User Input
-                    </a></dt>
-                    <dd>Getting input data from the user via the console</dd>
-
-                    <dt><a href="strings.html">
-                        <span class="material-symbols-outlined">glyphs</span>
-                        Working with Strings
-                    </a></dt>
-                    <dd>Manipulating and operating on strings of characters</dd>
-
-                    <dt><a href="operators.html">
-                        <span class="material-symbols-outlined">calculate</span>
-                        Maths &amp; Logic Operators
-                    </a></dt>
-                    <dd>Performing mathematical and logical operations on data (+, -, &&, ||, etc.)</dd>
-
-                    <dt><a href="branching.html">
-                        <span class="material-symbols-outlined">alt_route</span>
-                        Branching / Decisions
-                    </a></dt>
-                    <dd>Making choices and taking different code pathways (if, when, etc.)</dd>
-
-                    <dt><a href="iteration.html">
-                        <span class="material-symbols-outlined">replay</span>
-                        Iteration / Looping
-                    </a></dt>
-                    <dd>Repeating blocks of code (while, for, forEach, etc.)</dd>
-
-                    <dt><a href="collections.html">
-                        <span class="material-symbols-outlined">table_rows_narrow</span>
-                        Data Collections
-                    </a></dt>
-                    <dd>Storing and manipulating collections of data (List, Map, etc.)</dd>
-
-                    <dt><a href="functions.html">
-                        <span class="material-symbols-outlined">schema</span>
-                        Functions
-                    </a></dt>
-                    <dd>Creating and calling functions with parameters and return values</dd>
-
-                    <dt><a href="classes.html">
-                        <span class="material-symbols-outlined">architecture</span>
-                        OOP Classes &amp; Objects
-                    </a></dt>
-                    <dd>OOP: Defining classes and instantiating objects from them</dd>
-                </dl>
-            </nav>
-
-        </article>
+        <include src="includes/nav.html"></include>
 
         <!-- ----------------------------------------------------------------------------------- -->
 
@@ -142,39 +35,55 @@
 
             <pre><code class="language-kotlin">
                 fun main() {
+                    val results = mutableListOf&lt;Result&gt;()
+
                     while (true) {
                         print("Name: ")
                         val name = readln()
-                        // Quit if no name
                         if (name.isBlank()) break
 
-                        print("Mark: ")
-                        val mark = readln().toIntOrNull()
+                        var mark: Int?
+                        do {
+                            print("Mark: ")
+                            mark = readln().toIntOrNull()
+                        } while (mark == null)
 
-                        print("Feedback: ")
-                        val feedback = readln()
+                        results.add(Result(name, mark))
+                    }
 
-                        // Work out the grade
-                        val grade = when (mark) {
-                            in 0..24   -> "Not Achieved"
-                            in 25..49  -> "Achieved"
-                            in 50..74  -> "Merit"
-                            in 75..100 -> "Excellence"
-                            else -> "unknown"
-                        }
+                    println("Class Results")
+                    println("-".repeat(32))
 
-                        println()
-                        println(name)
-                        println("-".repeat(name.length))
-                        println(grade)
+                    results.sortByDescending { it.mark }
 
-                        // Show feedback as a list if given
-                        if (feedback.isNotBlank()) {
-                            feedback.split(", ").forEach {
-                                println(" - $it")
-                            }
-                        }
-                        println()
+                    results.forEachIndexed { i, result ->
+                        println("${i+1}. $result")
+                    }
+
+                    val total = results.sumOf { it.mark }
+                    val average = total.toDouble() / results.size
+
+                    println("-".repeat(32))
+                    println("Average Mark %.1f".format(average))
+                }
+
+                class Result (
+                    val name: String,
+                    val mark: Int
+                ) {
+                    fun grade(): String = when (mark) {
+                        in 0..24 -> "Not Achieved"
+                        in 25..49 -> "Achieved"
+                        in 50..74 -> "Merit"
+                        in 75..100 -> "Excellence"
+                        else -> "unknown"
+                    }
+
+                    override fun toString(): String {
+                        var info = name.padEnd(15)
+                        info += mark.toString().padStart(3)
+                        info += "  " + grade()
+                        return info
                     }
                 }
             </code></pre>
@@ -186,33 +95,49 @@
         <article>
             <h2>Program Output</h2>
 
-            <p>This concise program gets input from the user (until they just press Enter to quit), processes the data, and then displays it in a nicely formated way. Here is an example run:</p>
+            <p>This program shows off some of the neat, concise Kotlin syntax: <a href="collections.html">data collections</a>, <a href="classes.html">classes</a>, <a href="iteration.html">forEach</a>, <a href="branching.html">when</a>, <a href="strings.html">String templates</a>, null safety, etc.</p>
+
+            <p>Here is an example run for the program:</p>
 
             <pre><code class="language-console">
                 $ java -classpath kotlin-stdlib.jar MainKt
 
                 Name: Jimmy Smith
-                Mark: 78
-                Feedback: superb effort, clear and concise
-
-                Jimmy Smith
-                -----------
-                Excellence
-                 - superb effort
-                 - clear and concise
-
-                Name: Dave Gnome
                 Mark: 13
-                Feedback: rushed, incomplete, little effort
 
-                Dave Gnome
-                ----------
-                Not Achieved
-                 - rushed
-                 - incomplete
-                 - little effort
+                Name: Shelly Gnome
+                Mark: 100
+
+                Name: Tane Jones
+                Mark: 78
+
+                Name: Dave Turnip
+                Mark: 32
+
+                Name: Karen Lentil
+                Mark: ⏎
+                Mark: ⏎
+                Mark: 59
+
+                Name: Kate Williams
+                Mark: 85
+
+                Name: Tim Gorilla
+                Mark: 8
 
                 Name: ⏎
+
+                Class Results
+                -----------------------------------
+                1. Shelly Gnome   100  Excellence
+                2. Kate Williams   85  Excellence
+                3. Tane Jones      78  Excellence
+                4. Katen Lentil    59  Merit
+                5. Dave Turnip     32  Achieved
+                6. Jimmy Smith     13  Not Achieved
+                7. Tim Gorilla      8  Not Achieved
+                -----------------------------------
+                Average Mark 53.6
 
                 $ Process finished with exit code 0
             </code></pre>

@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'JetBrains Sans';
+    src: url('../fonts/JetBrainsSans.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../fonts/JetBrainsMonoNL.ttf') format('truetype');
+}
+
+:root {
+    --default-font: 'JetBrains Sans',Inter,system-ui,Roboto,'Helvetica Neue',Arial,sans-serif;
+
+    --logo-col-1: #E44857;
+    --logo-col-2: #C711E1;
+    --logo-col-3: #7F52FF;
+
+    --back-gradient-start: #3f0048;
+    --back-gradient-end: #130046;
+
+    --primary-col: #cbb8ff;
+    --secondary-col: #ffbac1;
+}
+
+
+

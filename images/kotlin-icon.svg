@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="500px" height="500px" viewBox="0 0 500 500" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient gradientUnits="objectBoundingBox" x1="1.0000001" y1="-1.1920929E-07" x2="1.4551915E-11" y2="0.9999999" id="gradient_1">
+      <stop offset="0.34351438%" stop-color="#E44857" />
+      <stop offset="46.89%" stop-color="#C711E1" />
+      <stop offset="100%" stop-color="#7F52FF" />
+    </linearGradient>
+    <path d="M500 0L500 0L500 500L0 500L0 0L500 0Z" id="path_1" />
+    <path d="M460 460L41 460L41 41L460 41L250.5 250.5L460 460Z" id="path_2" />
+    <clipPath id="clip_1">
+      <use xlink:href="#path_1" clip-rule="evenodd" fill-rule="evenodd" />
+    </clipPath>
+  </defs>
+  <g id="kotlin-icon" clip-path="url(#clip_1)">
+    <path d="M500 0L500 0L500 500L0 500L0 0L500 0Z" id="kotlin-icon" fill="none" stroke="none" />
+    <g id="Polygon">
+      <use xlink:href="#path_2" fill="none" stroke="#FFFFFF" stroke-width="60" stroke-linecap="round" stroke-linejoin="round" />
+      <use stroke="none" fill="url(#gradient_1)" xlink:href="#path_2" fill-rule="evenodd" />
+    </g>
+  </g>
+</svg>
